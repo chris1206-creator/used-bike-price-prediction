@@ -7,12 +7,18 @@ st.set_page_config(page_title="Used Bike Price Predictor", layout="centered")
 st.title("🏍️ Used Bike Price Prediction App")
 st.markdown("Enter the bike details below to predict its selling price.")
 
+# Get list of bike models
+bike_models = ["Bajaj Pulsar 150cc 2018", "Hero Splendor 100cc 2015", "Honda Activa 110cc 2017", "TVS Jupiter 110cc 2018", "Yamaha FZ 150cc 2019"]
+
+# Get list of locations
+locations = ["Delhi", "Mumbai", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad", "Jaipur", "Lucknow"]
+
 def user_input():
-    model_name = st.text_input("Model Name", "Bajaj Pulsar 150cc 2018")
+    model_name = st.selectbox("Model Name", bike_models)
     model_year = st.number_input("Model Year", min_value=1990, max_value=2025, value=2018)
     kms_driven = st.number_input("KMs Driven", min_value=0, value=20000)
     owner = st.selectbox("Owner", ["first owner", "second owner", "third owner", "fourth owner", "Unknown"])
-    location = st.text_input("Location", "delhi")
+    location = st.selectbox("Location", locations)
     mileage = st.number_input("Mileage (kmpl)", min_value=0.0, value=50.0)
     power = st.number_input("Power (bhp)", min_value=0.0, value=15.0)
     return {
