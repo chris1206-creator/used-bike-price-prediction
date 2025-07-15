@@ -21,7 +21,7 @@ Given a dataset of used bikes, the goal is to build a regression model that can 
 ---
 
 ## 📁 Project Structure
-
+```
 used-bike-price-prediction/
 │
 ├── data_loader.py              # Loads and cleans data
@@ -38,7 +38,7 @@ used-bike-price-prediction/
 │
 └── notebooks/
     └── 01_eda_and_cleaning.ipynb # Data exploration & insights
-
+```
 ---
 
 ## 🛠️ Getting Started
